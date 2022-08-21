@@ -173,20 +173,10 @@ def run(
                             xywh = (xyxy2xywh(torch.tensor(xyxy).view(1, 4)) / gn).view(-1).tolist()  # normalized xywh
                             
                             widths.append(xywh[2])
-                            # print(len(widths))
-                            # print("width = ", round(xywh[2] * 1000))
-                            # print(xywh[2])
                             heights.append(xywh[3])
-                            # print("height = ", round(xywh[3] * 1000))
-                            # print("height..................")
-                            # print(xywh[3])
-                            # print(xywh)
-                            # print("----------------------------")
                             if len(widths) > 30:
                                 widths.popleft()
                                 heights.popleft()
-                                # print(len(widths))
-                                # print("here...........................")
                                 fall_counter = 0
 
                                 for idx in range(0, 30):
